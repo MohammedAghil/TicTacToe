@@ -6,8 +6,10 @@ let textDisplay;
 let number_of_moves;
 let gameRunning = true;
 function ResetBoard(){
-    gameRunning = true
-    var children = gameContainer.children;
+    gameRunning = true;
+    player = false;
+    textDisplay.innerText = "Player 1's Turn";
+    let children = gameContainer.children;
     for (let i = 0; i < 9; i++) {
         children[i].innerText = "";
     }
@@ -89,7 +91,7 @@ function getValue(child){
 }
 
 function hasWonOrDrawn(){
-    var children = gameContainer.children;
+    let children = gameContainer.children;
     //row wise check
     let start =0;
     let rowSum = 0;
